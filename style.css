@@ -1,0 +1,478 @@
+:root {
+  --bg-color: #FAF8F5;
+  --primary-color: #A8783F;
+  --text-gold: #A8783F;
+  --text-dark: #6E533F;
+  --font-cursive: 'Alex Brush', cursive;
+  --font-serif: 'Cinzel', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #faf8f5;
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Container do Convite */
+.card-container {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--bg-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  min-height: 100vh;
+}
+
+/* Foto do Topo */
+.top-photo-wrapper {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-photo-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(250,248,245,0) 0%, var(--bg-color) 100%);
+}
+
+/* Conteúdo Central */
+.main-content {
+  padding: 20px 20px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.names-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 5px 0 20px;
+}
+
+.left-decoration {
+  position: absolute;
+  left: -60%;
+  top: -100px;
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+}
+
+.names-container .couple-names {
+  margin: 0;
+}
+
+.couple-names {
+  font-family: var(--font-cursive);
+  font-size: 3.8rem;
+  color: var(--primary-color);
+  line-height: 1.1;
+  margin: 10px 0 20px;
+  font-weight: normal;
+}
+
+.couple-names span {
+  display: block;
+  font-size: 2.2rem;
+  margin: -5px 0;
+}
+
+.invitation-text {
+  font-size: 0.8rem;
+  color: var(--text-gold);
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  max-width: 320px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+/* Espaço menor entre o versículo e o texto do convite */
+.invitation-text + .invitation-text {
+  margin-top: -10px; /* Reduz o espaço excessivo entre os dois parágrafos */
+}
+
+.information-extra {
+  font-size: 0.8rem;
+  color: var(--text-gold);
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  max-width: 320px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.location-info {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.divider-line {
+  width: 80%;
+  height: 1px;
+  background-color: var(--text-gold);
+  opacity: 0.5;
+  margin: 0 auto;
+}
+
+.location-text {
+  font-size: 0.99rem;
+  color: var(--text-gold);
+  letter-spacing: 2px;
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+
+/* Horário do Evento - Garante a cor dourada no texto e ícone */
+.time-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.3rem;
+  color: var(--text-gold);
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+.time-text i,
+.time-text span {
+  color: var(--text-gold);
+}
+
+.date-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0 30px;
+}
+
+.date-wrapper .date-badge {
+  margin: 1px 0;
+}
+
+.date-badge {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding: 10px 40px;
+  letter-spacing: 3px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.date-deco {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.date-deco-top {
+  margin-bottom: 2px;
+}
+
+.date-deco-bottom {
+  margin-top: 2px;
+}
+
+.touch-instruction {
+  font-size: 0.75rem;
+  color: var(--text-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.interactive-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.btn-row:hover {
+  transform: scale(1.03);
+}
+
+.icon-square {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-label {
+  font-size: 0.85rem;
+  color: var(--text-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.btn-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-gold);
+}
+
+/* Foto Rodapé */
+.bottom-section {
+  width: 100%;
+  position: relative;
+}
+
+.bottom-photo-wrapper {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.bottom-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottom-photo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(250,248,245,0) 0%, var(--bg-color) 100%);
+}
+
+.waiting-text {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  font-family: var(--font-cursive);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  line-height: 1;
+}
+
+/* Modal RSVP Corrigido */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  padding: 25px 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 380px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  border: 1px solid var(--primary-color);
+  position: relative;
+  z-index: 10000;
+}
+
+.modal-content h3 {
+  color: var(--primary-color);
+  font-family: var(--font-serif);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.modal-content .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.modal-content label {
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.modal-content input, 
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--text-gold);
+  background: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+  cursor: text;
+}
+
+.modal-btn {
+  background: var(--primary-color);
+  color: #FFF;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.modal-btn.btn-cancel {
+  background: #888888;
+  margin-top: 8px;
+}
+
+/* Adaptativo para Celulares */
+@media screen and (max-width: 600px) {
+  html, body {
+    background-color: var(--bg-color);
+  }
+
+  .card-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .top-photo-wrapper,
+  .bottom-photo-wrapper {
+    height: 50vh;
+  }
+}
+
+/* Container de Música acima/direita dos nomes */
+.music-wrapper {
+  position: absolute;
+  right: -80px;
+  top: -75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.music-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.music-toggle-btn.playing {
+  animation: pulse 2s infinite;
+}
+
+/* Texto abaixo do botão */
+.music-label {
+  font-size: 0.65rem;
+  color: var(--text-gold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(168, 120, 63, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(168, 120, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(168, 120, 63, 0); }
+}
